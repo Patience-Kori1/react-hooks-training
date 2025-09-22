@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 const FunctionState = () => {
     const [counter, setCounter] = useState(0)
 
-    console.log(counter)
+    // console.log(counter)
 
     // première méthode à l'ancienne pour modifier le state sans prevState
     // const addOne = () => {
@@ -17,7 +17,7 @@ const FunctionState = () => {
 
   return (
     <div>
-        <h2>2. Avec fonctions et le hook useState</h2>
+        <h3>2. Avec fonctions et le hook useState</h3>
 
         <p> Function State : <span className="counter"> {counter}</span></p>
         <div>

@@ -30,7 +30,7 @@ export class ClasseState extends Component {
     return (
       <div>
 
-        <h2> 1. Avec les classes</h2>
+        <h3> 1. Avec les classes</h3>
 
         <p> Class State : <span className="counter"> {this.state.counter}</span></p>
 
