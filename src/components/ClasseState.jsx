@@ -10,7 +10,7 @@ export class ClasseState extends Component {
         }
     }
 
-    // première méthode à l'ancienne pour modifier le state 
+    // première méthode à l'ancienne pour modifier le state sans prevState
     addOne = () => {
         this.setState ({
             counter:this.state.counter +1
@@ -30,7 +30,7 @@ export class ClasseState extends Component {
     return (
       <div>
 
-        <h2> 1. Méthode avec les classes</h2>
+        <h2> 1. Avec les classes</h2>
 
         <p> Class State : <span className="counter"> {this.state.counter}</span></p>
 
