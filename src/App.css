@@ -18,10 +18,28 @@
   color:rgb(239, 90, 10)
 }
 
+.App hr {
+  font-weight: 700;
+  border: rgb(240, 5, 5) solid 0.15rem;
+  margin: 3rem 0
+}
+
 .counter {
   font-size: larger;
   font-weight: 700;
   color:rgb(204, 85, 85)
+}
+
+.ClassCount div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.FunctionCount div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 @keyframes logo-spin {
