@@ -1,16 +1,32 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+// import { useEffect } from 'react'
 import './App.css'
-import Todo from './useStateComponents/Todo'
+import ClassCount from './useEffectComponents/ClassCount'
+import FunctionCount from './useEffectComponents/FunctionCount'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     < div className="App">
-      <h2>Appli todo list</h2>
+      <h2>useEffect</h2>
 
-       <Todo/>
+      <div>
+        
+
+        <div>
+        <h4>Avec FunctionCount</h4>
+        <FunctionCount/>
+
+      <hr />
+
+      </div>
+        <h4>Avec ClassCount</h4>
+        <ClassCount/>
+      </div>
+
+      
 
     </div>
   )
