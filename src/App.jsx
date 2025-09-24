@@ -1,21 +1,53 @@
-import React, { Component } from 'react'
 import './App.css'
-import Count from './useReduce/Count'
+import {useState} from 'react'
+import Button from './useCallback/Button'
+import Count from './useCallback/Count'
 
-export class App extends Component {
+function App() {
+ 
+  const[countOne, setCountOne] = useState({value:0, btnColor:'success', increment:15})
+  const[countTwo, setCountTwo] = useState({value:0, btnColor:'danger', increment:20})
 
-  render() {
-    return (
-      < div className="App">
+  const incrementCountOne = (val) => {
+    countOne.value < 100 ? setCountOne({...countOne, value: countOne.value + val}): null
+  }
 
-        <h2>useReduce</h2>
+  const incrementCountTwo = (val) => {
+    countOne.value < 100 ? setCountTwo({...countTwo, value: countTwo.value + val}) : null
+  }
 
-        <Count/>
+  return (
+    < div className="App">
+
+        <h2>useCallback</h2>
+
+        {/* Premier bouton */}
+        <Button 
+          btnColor={countOne.btnColor} 
+          increment={countOne.increment}
+          handleClick = {incrementCountOne}
+        > 
+
+          Count 1
+
+        </Button>
+
+        {/* Deuxième bouton */}
+        <Button 
+          btnColor={countTwo.btnColor} 
+          increment={countTwo.increment}
+          handleClick = {incrementCountTwo}
+        > 
+
+          Count 2
+
+        </Button>
+
+        <Count count={countOne.value} bgColor={countOne.btnColor}/>
+        <Count count={countTwo.value} bgColor={countTwo.btnColor}/>
 
       </div>
-    )
-  }
+  )
 }
 
 export default App
-
