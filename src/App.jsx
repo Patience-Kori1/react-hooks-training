@@ -1,5 +1,5 @@
 import './App.css'
-import {useState} from 'react'
+import {useState, useCallback} from 'react'
 import Button from './useCallback/Button'
 import Count from './useCallback/Count'
 
@@ -8,43 +8,71 @@ function App() {
   const[countOne, setCountOne] = useState({value:0, btnColor:'success', increment:15})
   const[countTwo, setCountTwo] = useState({value:0, btnColor:'danger', increment:20})
 
-  const incrementCountOne = (val) => {
-    countOne.value < 100 ? setCountOne({...countOne, value: countOne.value + val}): null
-  }
+  const incrementCountOne = useCallback(
+      
+      (val) => {
+      console.log("Je suis dans incrementeCountOne")
+      countOne.value >= 100 ? setCountOne({...countOne, value:100}) : setCountOne({...countOne, value: countOne.value + val})
+    }, 
 
-  const incrementCountTwo = (val) => {
-    countOne.value < 100 ? setCountTwo({...countTwo, value: countTwo.value + val}) : null
-  }
+    [countOne]
+
+  )
+
+  const incrementCountTwo = useCallback(
+    
+      (val) => {
+      console.log("Je suis dans incrementeCountOne")
+      countTwo.value >= 100 ? setCountTwo({...countTwo, value:100}) :setCountTwo({...countTwo, value: countTwo.value + val})
+    },
+
+    [countTwo]
+  )
 
   return (
     < div className="App">
 
         <h2>useCallback</h2>
 
-        {/* Premier bouton */}
-        <Button 
-          btnColor={countOne.btnColor} 
-          increment={countOne.increment}
-          handleClick = {incrementCountOne}
-        > 
+        <div className='useCallbackApp'>
+          <div className='useCallback'>
 
-          Count 1
+            {/* Premier bouton */}
+            <Button 
+              btnColor={countOne.btnColor} 
+              increment={countOne.increment}
+              handleClick = {incrementCountOne}
+            > 
 
-        </Button>
+              Count 1
 
-        {/* Deuxième bouton */}
-        <Button 
-          btnColor={countTwo.btnColor} 
-          increment={countTwo.increment}
-          handleClick = {incrementCountTwo}
-        > 
+            </Button>
+            <Count 
+              count={countOne.value} 
+              bgColor={countOne.btnColor} 
+              text="countOne"
+            />
+          </div>
 
-          Count 2
+          <div className='useCallback'>
+            {/* Deuxième bouton */}
 
-        </Button>
+            <Button 
+              btnColor={countTwo.btnColor} 
+              increment={countTwo.increment}
+              handleClick = {incrementCountTwo}
+            > 
 
-        <Count count={countOne.value} bgColor={countOne.btnColor}/>
-        <Count count={countTwo.value} bgColor={countTwo.btnColor}/>
+              Count 2
+
+            </Button>
+            <Count 
+              count={countTwo.value} 
+              bgColor={countTwo.btnColor}
+              text="countTwo"
+            />
+          </div>
+        </div>
 
       </div>
   )

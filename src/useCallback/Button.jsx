@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Button({btnColor, increment, children, handleClick}) {
+
+    console.log(`Button ${children}`)
   return (
 
     <button 
@@ -13,4 +15,4 @@ function Button({btnColor, increment, children, handleClick}) {
   )
 }
 
-export default Button
+export default React.memo(Button)
