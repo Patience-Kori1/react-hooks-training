@@ -1,6 +1,8 @@
 import './App.css'
 import {useState, useCallback} from 'react'
+import Profile from './components/Profile'
 import AppUseContext from './useContext/AppUseContext'
+import PrivateRoute from './components/PrivateRoute'
 import AppUseCallback from './useCallback/AppUseCallback'
 import AppUseEffect from './useEffect/AppUseEffect'
 import AppUseReduce from './useReduce/AppUseReduce'
@@ -24,6 +26,7 @@ function App() {
         <nav>
 
           <Link to="/">Use Callback </Link> | 
+          <Link to="/Profile">Profile</Link> |  
           <Link to="/useContext">Use Context </Link> |  
           <Link to="/useEffect">Use Effect </Link> | 
           <Link to="/useReduce">Use Reduce </Link> | 
@@ -33,6 +36,15 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<AppUseCallback/>}/>
+          
+          <Route 
+            path="/Profile" 
+            element={
+              <PrivateRoute isAdmin={isAdmin}>
+                <Profile/>
+              </PrivateRoute> 
+          }/>
+
           <Route path="/useContext" element={<AppUseContext/>}/>
           <Route path="/useEffect" element={<AppUseEffect/>}/>
           <Route path="/useReduce" element={<AppUseReduce/>}/>
