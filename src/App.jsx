@@ -8,6 +8,7 @@ import AppUseEffect from './useEffect/AppUseEffect'
 import AppUseReduce from './useReduce/AppUseReduce'
 import AppUseState from './useState/AppUseState'
 import AppHookFtClass from './hooksFtClass/AppHookFtClass'
+import AppCustomHook from './customHook/AppCustomHook'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
           <Link to="/useEffect">Use Effect </Link> | 
           <Link to="/useReduce">Use Reduce </Link> | 
           <Link to="/useState">Use State </Link> | 
-          <Link to="/hookFtclass">Hook ft Class </Link> |
+          <Link to="/hookFtclass">Hook ft Class </Link> | 
+          <Link to="/customHook">Hook personalisé</Link> |
 
         </nav>
         <Routes>
@@ -50,6 +52,7 @@ function App() {
           <Route path="/useReduce" element={<AppUseReduce/>}/>
           <Route path="/useState" element={<AppUseState/>}/>
           <Route path="/hookFtClass" element={<AppHookFtClass/>}/>
+          <Route path="/customHook" element={<AppCustomHook/>}/>
           
         </Routes>
       </Router>
