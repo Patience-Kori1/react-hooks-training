@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import './App.css'
-import Todo from './useState/Todo'
+import '../App.css'
+import Todo from './Todo'
 
 
-function App() {
+function AppUseState() {
   const [count, setCount] = useState(0)
 
   return (
@@ -16,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default AppUseState

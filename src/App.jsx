@@ -1,80 +1,48 @@
 import './App.css'
 import {useState, useCallback} from 'react'
-import Button from './useCallback/Button'
-import Count from './useCallback/Count'
+import AppUseContext from './useContext/AppUseContext'
+import AppUseCallback from './useCallback/AppUseCallback'
+import AppUseEffect from './useEffect/AppUseEffect'
+import AppUseReduce from './useReduce/AppUseReduce'
+import AppUseState from './useState/AppUseState'
+import AppHookFtClass from './hooksFtClass/AppHookFtClass'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
- 
-  const[countOne, setCountOne] = useState({value:0, btnColor:'success', increment:15})
-  const[countTwo, setCountTwo] = useState({value:0, btnColor:'danger', increment:20})
 
-  const incrementCountOne = useCallback(
-      
-      (val) => {
-      console.log("Je suis dans incrementeCountOne")
-      countOne.value >= 100 ? setCountOne({...countOne, value:100}) : setCountOne({...countOne, value: countOne.value + val})
-    }, 
-
-    [countOne]
-
-  )
-
-  const incrementCountTwo = useCallback(
-    
-      (val) => {
-      console.log("Je suis dans incrementeCountOne")
-      countTwo.value >= 100 ? setCountTwo({...countTwo, value:100}) :setCountTwo({...countTwo, value: countTwo.value + val})
-    },
-
-    [countTwo]
-  )
+  const[isAdmin, setAdmin] = useState(false); // ou false pour non admin
 
   return (
     < div className="App">
+      <Router
+        // Je rajoute cette ligne pour accepter le flag des futurs améliorations
+        future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+        }}
+      >
+        <nav>
 
-        <h2>useCallback</h2>
+          <Link to="/">Use Callback </Link> | 
+          <Link to="/useContext">Use Context </Link> |  
+          <Link to="/useEffect">Use Effect </Link> | 
+          <Link to="/useReduce">Use Reduce </Link> | 
+          <Link to="/useState">Use State </Link> | 
+          <Link to="/hookFtclass">Hook ft Class </Link> |
 
-        <div className='useCallbackApp'>
-          <div className='useCallback'>
+        </nav>
+        <Routes>
+          <Route path="/" element={<AppUseCallback/>}/>
+          <Route path="/useContext" element={<AppUseContext/>}/>
+          <Route path="/useEffect" element={<AppUseEffect/>}/>
+          <Route path="/useReduce" element={<AppUseReduce/>}/>
+          <Route path="/useState" element={<AppUseState/>}/>
+          <Route path="/hookFtClass" element={<AppHookFtClass/>}/>
+          
+        </Routes>
+      </Router>
 
-            {/* Premier bouton */}
-            <Button 
-              btnColor={countOne.btnColor} 
-              increment={countOne.increment}
-              handleClick = {incrementCountOne}
-            > 
-
-              Count 1
-
-            </Button>
-            <Count 
-              count={countOne.value} 
-              bgColor={countOne.btnColor} 
-              text="countOne"
-            />
-          </div>
-
-          <div className='useCallback'>
-            {/* Deuxième bouton */}
-
-            <Button 
-              btnColor={countTwo.btnColor} 
-              increment={countTwo.increment}
-              handleClick = {incrementCountTwo}
-            > 
-
-              Count 2
-
-            </Button>
-            <Count 
-              count={countTwo.value} 
-              bgColor={countTwo.btnColor}
-              text="countTwo"
-            />
-          </div>
-        </div>
-
-      </div>
+    </div>
   )
 }
 

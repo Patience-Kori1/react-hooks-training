@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import './App.css'
-import ClasseState from './components/ClasseState'
-import FunctionState from './components/FunctionState'
+import '../App.css'
+import ClasseState from './ClasseState'
+import FunctionState from './FunctionState'
 
-function App() {
+function AppHookFtClass() {
   const [count, setCount] = useState(0)
 
   return (
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default AppHookFtClass

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './App.css'
-import Count from './useReduce/Count'
+import '../App.css'
+import Count from './Count'
 
-export class App extends Component {
+export class AppUseReduce extends Component {
 
   render() {
     return (
@@ -17,5 +17,5 @@ export class App extends Component {
   }
 }
 
-export default App
+export default AppUseReduce
 

@@ -1,11 +1,11 @@
 // import { useState } from 'react'
 // import { useEffect } from 'react'
-import './App.css'
-import ClassCount from './useEffect/ClassCount'
-import FunctionCount from './useEffect/FunctionCount'
+import '../App.css'
+import ClassCount from './ClassCount'
+import FunctionCount from './FunctionCount'
 
 
-function App() {
+function AppUseEffect() {
   // const [count, setCount] = useState(0)
 
   return (
@@ -32,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export default AppUseEffect
