@@ -30,7 +30,7 @@ function AppUseCallback() {
   )
 
   return (
-    < div className="AppCallBack">
+    < div className="App">
 
         <h2>useCallback</h2>
 

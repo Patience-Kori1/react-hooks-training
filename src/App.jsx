@@ -24,18 +24,19 @@ function App() {
         v7_relativeSplatPath: true,
         }}
       >
-        <nav>
+        <nav className="nav"> 
 
-          <Link to="/">Use Callback </Link> | 
-          <Link to="/Profile">Profile</Link> |  
-          <Link to="/useContext">Use Context </Link> |  
-          <Link to="/useEffect">Use Effect </Link> | 
-          <Link to="/useReduce">Use Reduce </Link> | 
-          <Link to="/useState">Use State </Link> | 
-          <Link to="/hookFtclass">Hook ft Class </Link> | 
-          <Link to="/customHook">Hook personalisé</Link> |
+          <Link className="link" to="/">Use Callback </Link>  
+          <Link className="link" to="/Profile">Profile</Link>
+          <Link className="link" to="/useContext">Use Context </Link>  
+          <Link className="link" to="/useEffect">Use Effect </Link> 
+          <Link className="link" to="/useReduce">Use Reduce </Link> 
+          <Link className="link" to="/useState">Use State </Link>
+          <Link className="link" to="/hookFtclass">Hook ft Class </Link>
+          <Link className="link"to="/customHook">Hook personalisé</Link>
 
         </nav>
+
         <Routes>
           <Route path="/" element={<AppUseCallback/>}/>
           

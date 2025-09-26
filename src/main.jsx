@@ -8,5 +8,5 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Pour utiliser les fonctio
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )
