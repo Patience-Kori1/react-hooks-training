@@ -1,4 +1,5 @@
-
+import React from 'react'
+// import MyContact from './MyContact'
 
 function Search({searchStr, searchHandler}) {
   return (

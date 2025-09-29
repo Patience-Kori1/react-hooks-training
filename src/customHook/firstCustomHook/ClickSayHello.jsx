@@ -20,7 +20,7 @@ function ClickSayHello() {
 
     // Custom Hook
     useUpdateDocTitle(text)
-    console.log(isTrue)
+    // console.log(isTrue)
     
   return (
     <button onClick={() => setIsTrue(!isTrue)}> Cliquez </button>
