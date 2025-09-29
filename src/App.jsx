@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
 
-  const[isAdmin, setAdmin] = useState(false); // ou false pour non admin
+  const[isAdmin, setAdmin] = useState(false); // pour gérer le role dans PrivateRoute
 
   return (
     < div className="App">

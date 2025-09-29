@@ -4,10 +4,26 @@ import useUpdateDocTitle from './CustomHook';
 function ClickSayHello() {
 
     const [text, setText]= useState('');
-    useUpdateDocTitle(text)
+    const [isTrue, setIsTrue] = useState(true);
 
+    useEffect(() => {
+
+      if(isTrue) {
+        setText("Bonjour")
+      } else {
+        setText("Bonsoir")
+      }
+
+    }, [isTrue]
+
+    )
+
+    // Custom Hook
+    useUpdateDocTitle(text)
+    console.log(isTrue)
+    
   return (
-    <button onClick={() => setText("Hello World")}>Cliquez</button>
+    <button onClick={() => setIsTrue(!isTrue)}> Cliquez </button>
   )
 }
 

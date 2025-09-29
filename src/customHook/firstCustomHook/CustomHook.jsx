@@ -5,8 +5,8 @@ function useUpdateDocTitle(arg) {
     useEffect(
 
         ()=> {
-        // console.dir(document);
-        document.title = `Titre : ${arg}`
+          // console.dir(document);
+          document.title = `Titre : ${arg}`
         },
 
         [arg]
